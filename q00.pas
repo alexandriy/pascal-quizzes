@@ -9,22 +9,28 @@ var
 procedure withdraw(amount: integer);
 begin
   //code here
- 
-  
+ var temp:integer:= balance-amount; 
+ if (temp<0) then
+ begin
+ balance:=0;
+ exit;
+  end;
+ balance:=temp;
 end;
 
 // put some gold into treasury
 procedure deposit(amount:integer);  
 begin
   //code here
-  
+  var money:integer:=balance+amount;
+  balance:=money;
 end;
 
 // return current amount of balance
 function checkout():integer ;
 begin
   //code here
-
+result:= balance;
 end;
 
 
